@@ -1,5 +1,5 @@
 from dataclasses import asdict, dataclass
-from typing import Dict
+from typing import Dict, List
 
 
 @dataclass
@@ -136,7 +136,7 @@ class Swimming(Training):
                 / self.M_IN_KM / self.duration)
 
 
-def read_package(workout_type: str, data: list[str]) -> Training:
+def read_package(workout_type: str, data: List[str]) -> Training:
     """Прочитать данные полученные от датчиков."""
     workout_types: Dict[str, Training] = {
         'SWM': Swimming,
